@@ -1,69 +1,75 @@
-# CodeIgniter 4 Application Starter
+# Student Project Repository System
 
-## What is CodeIgniter?
+## Overview
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+The Student Project Repository System is a CodeIgniter 4 web application that allows students to submit and manage academic projects. The system supports project uploads, email notifications, pagination, search functionality, and security protections against common web attacks.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Features
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+### Security
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+* CSRF Protection
+* XSS Prevention using `esc()`
+* Input Validation
 
-## Installation & updates
+### Advanced Features
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+* File Upload System
+* Email Notification via SMTP
+* Search Functionality
+* Pagination
+* Performance Optimization
+* Debug Toolbar
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### Testing & Debugging
 
-## Setup
+* PHPUnit Test Suite
+* dd() Debugging
+* Stack Trace Analysis
+* Bug Fix Documentation
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## Technologies Used
 
-## Important Change with index.php
+* CodeIgniter 4
+* PHP 8.2
+* MySQL
+* phpMyAdmin
+* PHPUnit
+* GitHub
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Installation
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+1. Clone the repository.
+2. Run:
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```bash
+composer install
+```
 
-## Repository Management
+3. Configure `.env` file.
+4. Create database.
+5. Run migrations:
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+```bash
+php spark migrate
+```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+6. Start development server:
 
-## Server Requirements
+```bash
+php spark serve
+```
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+## Project Structure
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+* Controllers
+* Models
+* Views
+* Database Migrations
+* Tests
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+## Author
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Peter John Bitara
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Advanced Web Development Final Project
